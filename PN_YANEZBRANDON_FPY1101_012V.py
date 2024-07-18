@@ -5,7 +5,19 @@ import csv
 trabajadores = ['Juan Pérez','María García','Carlos López','Ana Martínez','Pedro Rodríguez','Laura Hernández',
                 'Miguel Sánchez','Isabel Gómez','Francisco Díaz','Elena Fernández']
 
+# Lista para almacenar los saldos
+lista_saldos = []
+
 # Funciones
+
+def sueldos_random():
+    return random.randint(300000, 2500000)
+
+# Generar sueldos aleatorios para cada trabajador
+def generar_sueldos():
+    global lista_saldos
+    lista_saldos = [(nombre, sueldos_random()) for nombre in trabajadores]
+    print("Sueldos aleatorios asignados correctamente.")
 
 # Menú
 
@@ -42,3 +54,4 @@ def menu():
             print("Generando reporte de sueldos...")
             generar_reporte()
     
+menu()
